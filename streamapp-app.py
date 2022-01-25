@@ -1,5 +1,5 @@
 import streamlit as st
-from skimage import io,img_as_float
+from skimage import io
 import matplotlib.pyplot as plt
 
 
