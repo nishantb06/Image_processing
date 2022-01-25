@@ -1,21 +1,31 @@
 import streamlit as st
 from skimage import io
 import matplotlib.pyplot as plt
+import cv2 as cv
 
-
-
+# st.write("Some default urls to use - ")
+# this also works - st.image(image = "url")
 
 st.header("Image Processing")
 
+URL_user = st.text_input("Image URL goes here")
+filter = st.selectbox("Which filter/Algorthm would you like to use",('Non Local Means Denoising Algorithm','Gaussian Filter'))
 
-#URL_user = st.text_input("Image URL goes here")
 
-img = io.imread("https://img.search.brave.com/Zp6LqdKNaQBBggKGYdp0Yn-ogwHhdzv23fc69PkZ9n8/rs:fit:1068:588:1/g:ce/aHR0cHM6Ly93d3cu/bGlmZWRlci5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTkv/MTEvWmlndXJhdC1k/ZS1Vci1mb3RvLWxp/ZmVkZXItbWluLTEw/Njh4NTg4LmpwZw")
-
-#if URL_user:
-#    img = io.imread(URL_user)
-
+def NLMD(img):
+    h = st.slider("how powerful should the filter be(10 preferably)",1,100,10,1)
+    dst = cv.fastNlMeansDenoisingColored(img,None,h,10,7,21)
+    st.image(image=dst,caption = "after fast NL means denoising filter")
     
+col1,col2 = st.columns(2)
 
-st.image(image=img,caption = "this was read with io.imread(url)")
-# this also works - st.image(image = "url")
+with col1:
+    img = io.imread(URL_user)
+    st.image(image=img,caption = "before")
+
+with col2:
+    if filter == 'Non Local Means Denoising Algorithm':
+        NLMD(img)
+    else:
+        st.write("Choose a filter you dumb bitch")
+
