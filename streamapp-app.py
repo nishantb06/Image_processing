@@ -5,6 +5,7 @@ import cv2 as cv
 
 # st.write("Some default urls to use - ")
 # this also works - st.image(image = "url")
+# https://docs.opencv.org/4.x/d5/d69/tutorial_py_non_local_means.html
 
 st.header("Image Processing")
 
