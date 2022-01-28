@@ -9,7 +9,8 @@ import numpy as np
 # https://docs.opencv.org/4.x/d5/d69/tutorial_py_non_local_means.html
 
 st.header("Image Processing")
-st.markdown("Paste [this](https://dynamic-image-resizer.sharechat.com/imageResizer/%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%95%E0%A4%A5%E0%A4%BE%E0%A4%8F%E0%A4%82_35279ab8_1642535570715_sc_atrbtd.jpg) link for reference")
+st.markdown ("A few links for referece - [1](https://dynamic-image-resizer.sharechat.com/imageResizer/%E0%A4%AE%E0%A5%8B%E0%A4%B9%E0%A4%AC%E0%A5%8D%E0%A4%AC%E0%A4%A4%E0%A4%A6%E0%A4%BF%E0%A4%B2%E0%A4%B8%E0%A5%87_2f7f27e1_1642514168134_sc_atrbtd.jpg)")
+st.markdown("[2](https://dynamic-image-resizer.sharechat.com/imageResizer/%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A4%95%E0%A4%A5%E0%A4%BE%E0%A4%8F%E0%A4%82_35279ab8_1642535570715_sc_atrbtd.jpg) link for reference")
 URL_user = st.text_input("Image URL goes here")
 filter = st.selectbox("Which filter/Algorthm would you like to use",('Non Local Means Denoising Algorithm','Bilateral Filter',
                                                                         'Gaussian Filter',"Median Filter","BM3D Filter"))
